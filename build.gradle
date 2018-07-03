@@ -1,17 +1,17 @@
 apply plugin: 'java'
 
-def release_version = System.getenv('VERSION')
-def MAVEN_URL = System.getenv('MAVEN_URL')
+def RELEASE_VERSION = System.getenv('RELEASE_VERSION')
+def PUBLISH_URL = System.getenv('PUBLISH_URL')
 def PRODUCT = System.getenv('PRODUCT')
 def GROUP_ID = 'com.couchbase.lite'
 
 repositories {
     mavenCentral()
     maven {
-            url MAVEN_URL
+            url PUBLISH_URL
         }
 }
 
 dependencies {
-    implementation GROUP_ID +  ':' + PRODUCT + ':' + release_version
+    implementation GROUP_ID +  ':' + PRODUCT + ':' + RELEASE_VERSION
 }
