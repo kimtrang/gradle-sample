@@ -5,8 +5,11 @@ def PUBLISH_URL = System.getenv('PUBLISH_URL')
 def PRODUCT = System.getenv('PRODUCT')
 def GROUP_ID = 'com.couchbase.lite'
 
+task wrapper(type: Wrapper) {
+   gradleVersion = '4.8.1' // version required
+}
+
 repositories {
-    mavenCentral()
     maven {
             url PUBLISH_URL
         }
